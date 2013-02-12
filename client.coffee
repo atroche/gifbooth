@@ -10,7 +10,6 @@ numShots = ->
 
 snapshots = []
 
-socket = io.connect(":8080")
 socket.on "connect", ->
 
   $('button').removeAttr('disabled')
@@ -80,3 +79,5 @@ window.onload = ->
   gui.add(text, "FPS", 1, 20).onChange setFPS
 
 
+$ ->
+  socket = io.connect(":8080")
