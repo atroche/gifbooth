@@ -5,9 +5,14 @@ fs  = require('fs')
 im = require('imagemagick')
 uuid = require('node-uuid')
 
+var sys = require('sys')
+var exec = require('child_process').exec;
+
 imgur = require('imgur');
 
 imgur.setKey(IMGUR_API_KEY)
+
+puts = (error, stdout, stderr) -> sys.puts(stdout)
 
 postImageToImgur = (filename, socket) ->
   imgur.upload filename, (response) ->
@@ -37,14 +42,14 @@ io.sockets.on 'connection', (socket) ->
         if imagesReceived >= expectedImages
 
           imArgs = ("/tmp/#{uploadPrefix}#{i}.jpg" for i in [0 ... expectedImages])
-          imArgs.push.apply(imArgs, ['-loop', '0', 'animation.gif'])
 
-          console.log imArgs
-          im.convert imArgs, (err) ->
-            if err
-              console.log err
+          exec("python makegif.py %s" % imArgs.join(" "), puts)
+          # console.log imArgs
+          # im.convert imArgs, (err) ->
+          #   if err
+          #     console.log err
 
-            postImageToImgur 'animation.gif', socket
+          #   postImageToImgur 'animation.gif', socket
 
           imagesReceived = 0
           expectedImages = 0
