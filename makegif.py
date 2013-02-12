@@ -12,3 +12,5 @@ args = parser.parse_args()
 images = [Image.open(fname) for fname in args.files]
 
 write_gif('ani.gif', images, repeat=True, subRectangles=False)
+
+print "Hey! It all appears to have went well."
