@@ -5,14 +5,20 @@ fs  = require('fs')
 im = require('imagemagick')
 uuid = require('node-uuid')
 
-var sys = require('sys')
-var exec = require('child_process').exec;
+sys = require('sys')
+exec = require('child_process').exec
 
 imgur = require('imgur');
 
 imgur.setKey(IMGUR_API_KEY)
 
-puts = (error, stdout, stderr) -> sys.puts(stdout)
+puts = (error, stdout, stderr) ->
+  sys.puts("error")
+  sys.puts(error)
+  sys.puts("stdout")
+  sys.puts(stdout)
+  sys.puts("stderr")
+  sys.puts(stderr)
 
 postImageToImgur = (filename, socket) ->
   imgur.upload filename, (response) ->
