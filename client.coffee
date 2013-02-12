@@ -49,6 +49,7 @@ onSuccess = (localMediaStream) ->
     snapshots.appendChild newShotContainer
 
   rotateInterval = undefined
+  displaySnapshots = ->
     sendShots()
 
     snaps = snapshots.children

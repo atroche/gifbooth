@@ -22,7 +22,12 @@
 
   socket.on("connect", function() {
     window.sendShots = function() {
-      return $('#snapshots').children().each(function(index, li) {
+      var snapshotListItems;
+      snapshotListItems = $('#snapshots').children();
+      socket.emit('numImages', {
+        numImages: snapshotListItems.length
+      });
+      return snapshotListItems.each(function(index, li) {
         var img;
         img = li.children[0];
         return socket.emit('image', {
