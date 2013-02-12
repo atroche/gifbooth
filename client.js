@@ -23,6 +23,7 @@
   socket = io.connect(":8080");
 
   socket.on("connect", function() {
+    $('button').attr('disabled', void 0);
     socket.on("imgur", function(data) {
       $("#gif").attr('src', data.url);
       $("#gif-url").attr('href', data.url);
