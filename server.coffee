@@ -51,7 +51,9 @@ io.sockets.on 'connection', (socket) ->
           imArgs = ("/tmp/#{uploadPrefix}#{i}.jpg" for i in [0 ... expectedImages])
           console.log imArgs
           exec("ls", puts)
-          exec("python makegif.py %s" % imArgs.join(" "), puts)
+          command = "python makegif.py %s" % imArgs.join(" ")
+          console.log command
+          exec(command, puts)
           # console.log imArgs
           # im.convert imArgs, (err) ->
           #   if err
