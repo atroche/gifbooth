@@ -79,7 +79,7 @@
 
   $(function() {
     var socket;
-    socket = io.connect("http://gifbooth-1267.apse2.actionbox.io:8080/");
+    socket = io.connect("http://linode:8080/");
     return socket.on("connect", function() {
       $('button').removeAttr('disabled');
       socket.on("imgur", function(data) {
