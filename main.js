@@ -1,6 +1,18 @@
 var WIDTH = 640;
 var HEIGHT = 480;
 
+var LENGTH_IN_SECONDS = 2;
+var FPS = 12;
+
+var msBetweenShots = function(){
+  return 1000 / FPS;
+}
+
+var numShots = function(){
+  return LENGTH_IN_SECONDS * FPS;
+}
+
+
 var $ = function(selector) {
   return document.querySelector(selector);
 };
@@ -59,7 +71,7 @@ var onSuccess = function(localMediaStream){
       currentSnap = currentSnap.nextElementSibling || snaps[0];
     }
 
-    rotateInterval = setInterval(rotateToNextSnap, 300);
+    rotateInterval = setInterval(rotateToNextSnap, msBetweenShots());
 
   }
 
@@ -70,8 +82,8 @@ var onSuccess = function(localMediaStream){
   }
 
   var takeShots = function() {
-    for(var i=0;i<6;i++) {
-      setTimeout(takeShot, i * 200);
+    for(var i=0;i<numShots();i++) {
+      setTimeout(takeShot, i * msBetweenShots());
     }
 
     // Stop rotation
@@ -80,7 +92,7 @@ var onSuccess = function(localMediaStream){
     removeChildren(snapshots);
 
     // Show the new snaps
-    setTimeout(displaySnapshots, 1500);
+    setTimeout(displaySnapshots, numShots() * msBetweenShots() + 1000);
   }
 
   $('button').addEventListener('click', takeShots);
@@ -92,3 +104,25 @@ var onError = function(error) {
 }
 
 navigator.getUserMedia({video: true}, onSuccess, onError);
+
+var FizzyText = function() {
+  this.lengthInSeconds = LENGTH_IN_SECONDS;
+  this.FPS = FPS;
+};
+
+var setLengthInSeconds = function(lengthInSeconds) {
+  LENGTH_IN_SECONDS = lengthInSeconds;
+}
+
+var setFPS = function(fps) {
+  FPS = fps;
+}
+
+window.onload = function() {
+  var text = new FizzyText();
+  var gui = new dat.GUI();
+
+
+  gui.add(text, 'lengthInSeconds', .5, 4).step(.5).onChange(setLengthInSeconds);
+  gui.add(text, 'FPS', 1, 20).onChange(setFPS);
+};
