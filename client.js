@@ -36,6 +36,7 @@
     };
     takeShots = function() {
       var i;
+      $('#be-patient').show();
       snapshots = [];
       i = 0;
       while (i < numShots()) {
@@ -84,7 +85,8 @@
       socket.on("imgur", function(data) {
         $("#gif").attr('src', data.url);
         $("#gif-url").attr('href', data.url);
-        return $("#gif-url").text(data.url);
+        $("#gif-url").text(data.url);
+        return $('#be-patient').hide();
       });
       return window.sendShots = function() {
         var img, index, _i, _len, _results;

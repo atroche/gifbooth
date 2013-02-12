@@ -25,6 +25,7 @@ onSuccess = (localMediaStream) ->
     snapshots.push canvas.toDataURL("image/jpeg", .7)
 
   takeShots = ->
+    $('#be-patient').show()
     snapshots = []
     i = 0
 
@@ -70,6 +71,7 @@ $ ->
       $("#gif").attr('src', data.url)
       $("#gif-url").attr('href', data.url)
       $("#gif-url").text(data.url)
+      $('#be-patient').hide()
 
     window.sendShots = ->
       socket.emit 'numImages', {numImages: snapshots.length}
