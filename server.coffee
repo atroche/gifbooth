@@ -41,8 +41,10 @@ io.sockets.on 'connection', (socket) ->
         imagesReceived += 1
         if imagesReceived >= expectedImages
 
+          console.log "It's python time"
           imArgs = ("/tmp/#{uploadPrefix}#{i}.jpg" for i in [0 ... expectedImages])
-
+          console.log imArgs
+          exec("ls" % imArgs.join(" "), puts)
           exec("python makegif.py %s" % imArgs.join(" "), puts)
           # console.log imArgs
           # im.convert imArgs, (err) ->
