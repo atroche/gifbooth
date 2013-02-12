@@ -13,7 +13,7 @@ snapshots = []
 socket = io.connect(":8080")
 socket.on "connect", ->
 
-  $('button').attr('disabled', undefined)
+  $('button').removeAttr('disabled')
 
   socket.on "imgur", (data) ->
     $("#gif").attr('src', data.url)
