@@ -21,7 +21,7 @@
   socket = io.connect(":8080");
 
   socket.on("connect", function() {
-    return window.sendShots = function() {
+    window.sendShots = function() {
       return $('#snapshots').children().each(function(index, li) {
         var img;
         img = li.children[0];
@@ -30,6 +30,9 @@
           imgNum: index
         });
       });
+    };
+    return window.sendDone = function() {
+      return socket.emit('done');
     };
   });
 

@@ -12,12 +12,17 @@ socket = io.connect(":8080")
 socket.on "connect", ->
 
   window.sendShots = ->
-    $('#snapshots').children().each (index, li) ->
+    snapshotListItems = $('#snapshots').children()
+    socket.emit 'numImages', {numImages: snapshotListItems.length}
+    snapshotListItems.each (index, li) ->
       img = li.children[0]
       socket.emit 'image', {
         contents: img.src
         imgNum: index
       }
+
+  window.sendDone = ->
+    socket.emit 'done'
 
 
 navigator.getUserMedia = navigator.getUserMedia or navigator.webkitGetUserMedia or navigator.mozGetUserMedia or navigator.msGetUserMedia
@@ -44,7 +49,6 @@ onSuccess = (localMediaStream) ->
     snapshots.appendChild newShotContainer
 
   rotateInterval = undefined
-  displaySnapshots = ->
     sendShots()
 
     snaps = snapshots.children
