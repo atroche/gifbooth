@@ -61,7 +61,7 @@ window.onload = ->
 
 
 $ ->
-  socket = io.connect(":8080")
+  socket = io.connect("http://gifbooth-1267.apse2.actionbox.io:8080/")
   socket.on "connect", ->
 
     $('button').removeAttr('disabled')
