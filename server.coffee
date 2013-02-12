@@ -29,19 +29,25 @@ io.sockets.on 'connection', (socket) ->
 
   socket.on 'image', (data) ->
     imgData = data.contents.replace(/^data:image\/jpeg;base64,/, "")
+    console.log imgData.length
     filename = "/tmp/#{uploadPrefix}#{data.imgNum}.jpg"
     fs.writeFile filename, imgData, 'base64', (err) ->
       im.convert [filename, '-resize', '320x240', filename], ->
         imagesReceived += 1
         if imagesReceived >= expectedImages
-          imagesReceived = 0
-          expectedImages = 0
-          im.resize
-          im.convert ["/tmp/#{uploadPrefix}*.jpg", '-resize', '320x240','-loop', '0', 'animation.gif'], (err) ->
+
+          imArgs = ("/tmp/#{uploadPrefix}#{i}.jpg" for i in [0 ... expectedImages])
+          imArgs.push.apply(imArgs, ['-loop', '0', 'animation.gif'])
+
+          console.log imArgs
+          im.convert imArgs, (err) ->
             if err
               console.log err
 
             postImageToImgur 'animation.gif', socket
+
+          imagesReceived = 0
+          expectedImages = 0
 
 
 

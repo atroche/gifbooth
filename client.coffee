@@ -1,30 +1,32 @@
 WIDTH = 640
 HEIGHT = 480
-LENGTH_IN_SECONDS = 1.5
-FPS = 5
+LENGTH_IN_SECONDS = 2
+FPS = 15
 msBetweenShots = ->
   1000 / FPS
 
 numShots = ->
   LENGTH_IN_SECONDS * FPS
 
+snapshots = []
+
 socket = io.connect(":8080")
 socket.on "connect", ->
 
+  socket.on "imgur", (data) ->
+    $("#gif").attr('src', data.url)
+    $("#gif-url").attr('href', data.url)
+    $("#gif-url").text(data.url)
+
   window.sendShots = ->
-    snapshotListItems = $('#snapshots').children()
+    socket.emit 'numImages', {numImages: snapshots.length}
 
-    socket.emit 'numImages', {numImages: snapshotListItems.length}
-
-    snapshotListItems.each (index, li) ->
-      img = li.children[0]
+    for img, index in snapshots
+      console.log img
       socket.emit 'image', {
-        contents: img.src
+        contents: img,
         imgNum: index
       }
-
-  window.sendDone = ->
-    socket.emit 'done'
 
 
 navigator.getUserMedia = navigator.getUserMedia or navigator.webkitGetUserMedia or navigator.mozGetUserMedia or navigator.msGetUserMedia
@@ -35,54 +37,21 @@ onSuccess = (localMediaStream) ->
   canvas.width = WIDTH
   canvas.height = HEIGHT
   ctx = canvas.getContext("2d")
-  snapshots = $("#snapshots")[0]
 
   takeShot = ->
-
-    # Grab still from webcam, append it to list of snapshots
-    newShot = document.createElement("img")
-    newShotContainer = document.createElement("li")
-
-    # By default not displaying, because we're waiting
-    newShotContainer.style.display = "none"
-    newShotContainer.appendChild newShot
     ctx.drawImage video, 0, 0
-    newShot.src = canvas.toDataURL("image/jpeg", .7)
-    newShot.height = video.clientHeight
-    snapshots.appendChild newShotContainer
-
-  rotateInterval = undefined
-  displaySnapshots = ->
-    sendShots()
-
-    snaps = snapshots.children
-    currentSnap = snaps[0]
-    rotateToNextSnap = ->
-      prevSnap = currentSnap.previousElementSibling or snaps[snaps.length - 1]
-      prevSnap.style.display = "none"
-      currentSnap.style.display = "block"
-      currentSnap = currentSnap.nextElementSibling or snaps[0]
-
-    rotateInterval = setInterval(rotateToNextSnap, msBetweenShots())
-
-  removeChildren = (node) ->
-    node.removeChild node.lastChild  while node.hasChildNodes()
+    snapshots.push canvas.toDataURL("image/jpeg", .7)
 
   takeShots = ->
+    snapshots = []
     i = 0
 
     while i < numShots()
       setTimeout takeShot, i * msBetweenShots()
       i++
 
-    # Stop rotation
-    clearInterval rotateInterval
-
-    # Clear previous animation
-    removeChildren snapshots
-
     # Show the new snaps
-    setTimeout displaySnapshots, numShots() * msBetweenShots() + 1000
+    setTimeout sendShots, numShots() * msBetweenShots() + 1000
 
   $("button").on "click", takeShots
 

@@ -39,20 +39,31 @@
     return socket.on('image', function(data) {
       var filename, imgData;
       imgData = data.contents.replace(/^data:image\/jpeg;base64,/, "");
+      console.log(imgData.length);
       filename = "/tmp/" + uploadPrefix + data.imgNum + ".jpg";
       return fs.writeFile(filename, imgData, 'base64', function(err) {
         return im.convert([filename, '-resize', '320x240', filename], function() {
+          var i, imArgs;
           imagesReceived += 1;
           if (imagesReceived >= expectedImages) {
-            imagesReceived = 0;
-            expectedImages = 0;
-            im.resize;
-            return im.convert(["/tmp/" + uploadPrefix + "*.jpg", '-resize', '320x240', '-loop', '0', 'animation.gif'], function(err) {
+            imArgs = (function() {
+              var _i, _results;
+              _results = [];
+              for (i = _i = 0; 0 <= expectedImages ? _i < expectedImages : _i > expectedImages; i = 0 <= expectedImages ? ++_i : --_i) {
+                _results.push("/tmp/" + uploadPrefix + i + ".jpg");
+              }
+              return _results;
+            })();
+            imArgs.push.apply(imArgs, ['-loop', '0', 'animation.gif']);
+            console.log(imArgs);
+            im.convert(imArgs, function(err) {
               if (err) {
                 console.log(err);
               }
               return postImageToImgur('animation.gif', socket);
             });
+            imagesReceived = 0;
+            return expectedImages = 0;
           }
         });
       });
