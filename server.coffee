@@ -1,6 +1,17 @@
+IMGUR_API_KEY = "652deb70e66249c7046971f0850f144d"
+
 io  = require('socket.io').listen(8080)
 fs  = require('fs')
 im = require('imagemagick')
+
+imgur = require('imgur');
+
+imgur.setKey(IMGUR_API_KEY)
+
+postImageToImgur = (filename) ->
+  imgur.upload filename, (response) ->
+    console.log response.links.original
+
 
 io.sockets.on 'connection', (socket) ->
   expectedImages = null
@@ -15,7 +26,14 @@ io.sockets.on 'connection', (socket) ->
     writeFile imgData, data.imgNum
     imagesReceived += 1
     if imagesReceived >= expectedImages
-      im.convert ['*.jpg', '-loop', '0', 'animation.gif']
+      imagesReceived = 0
+      expectedImages = 0
+      im.convert ['*.jpg', '-loop', '0', 'animation.gif'], (err) ->
+        if err
+          throw err
+
+        postImageToImgur 'animation.gif'
+
 
 
 writeFile = (data, imgNum) ->

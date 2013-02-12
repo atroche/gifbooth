@@ -13,7 +13,9 @@ socket.on "connect", ->
 
   window.sendShots = ->
     snapshotListItems = $('#snapshots').children()
+
     socket.emit 'numImages', {numImages: snapshotListItems.length}
+
     snapshotListItems.each (index, li) ->
       img = li.children[0]
       socket.emit 'image', {
@@ -34,6 +36,7 @@ onSuccess = (localMediaStream) ->
   canvas.height = HEIGHT
   ctx = canvas.getContext("2d")
   snapshots = $("#snapshots")[0]
+
   takeShot = ->
 
     # Grab still from webcam, append it to list of snapshots
