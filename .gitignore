@@ -1,5 +1,6 @@
 *.jpg
 *.gif
 node_modules
+*.pyc
 
 
