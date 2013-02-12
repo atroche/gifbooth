@@ -61,24 +61,24 @@ window.onload = ->
   gui.add(text, "FPS", 1, 20).onChange setFPS
 
 
-$ ->
-  socket = io.connect("http://gifbooth-1267.apse2.actionbox.io:8080/")
-  socket.on "connect", ->
 
-    $('button').removeAttr('disabled')
+socket = io.connect("http://linode:8080/")
+socket.on "connect", ->
 
-    socket.on "imgur", (data) ->
-      $("#gif").attr('src', data.url)
-      $("#gif-url").attr('href', data.url)
-      $("#gif-url").text(data.url)
-      $('#be-patient').hide()
+  $('button').removeAttr('disabled')
 
-    window.sendShots = ->
-      socket.emit 'numImages', {numImages: snapshots.length}
+  socket.on "imgur", (data) ->
+    $("#gif").attr('src', data.url)
+    $("#gif-url").attr('href', data.url)
+    $("#gif-url").text(data.url)
+    $('#be-patient').hide()
 
-      for img, index in snapshots
-        console.log img
-        socket.emit 'image', {
-          contents: img,
-          imgNum: index
-        }
+  window.sendShots = ->
+    socket.emit 'numImages', {numImages: snapshots.length}
+
+    for img, index in snapshots
+      console.log img
+      socket.emit 'image', {
+        contents: img,
+        imgNum: index
+      }
