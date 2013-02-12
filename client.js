@@ -18,7 +18,7 @@
     return LENGTH_IN_SECONDS * FPS;
   };
 
-  socket = io.connect("http://0.0.0.0:8080");
+  socket = io.connect(":8080");
 
   socket.on("connect", function() {
     return window.sendShots = function() {
