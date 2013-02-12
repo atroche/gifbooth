@@ -8,7 +8,7 @@ msBetweenShots = ->
 numShots = ->
   LENGTH_IN_SECONDS * FPS
 
-socket = io.connect("http://0.0.0.0:5001")
+socket = io.connect("http://0.0.0.0:8080")
 socket.on "connect", ->
 
   window.sendShots = ->

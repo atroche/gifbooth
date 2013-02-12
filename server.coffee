@@ -1,5 +1,4 @@
-io  = require('socket.io').listen(5001)
-dl  = require('delivery')
+io  = require('socket.io').listen(8080)
 fs  = require('fs')
 
 io.sockets.on 'connection', (socket) ->
