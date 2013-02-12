@@ -6,9 +6,9 @@
 
   HEIGHT = 480;
 
-  LENGTH_IN_SECONDS = 2;
+  LENGTH_IN_SECONDS = 1.5;
 
-  FPS = 12;
+  FPS = 5;
 
   msBetweenShots = function() {
     return 1000 / FPS;
@@ -59,7 +59,7 @@
       newShotContainer.style.display = "none";
       newShotContainer.appendChild(newShot);
       ctx.drawImage(video, 0, 0);
-      newShot.src = canvas.toDataURL("image/jpeg", 1.0);
+      newShot.src = canvas.toDataURL("image/jpeg", .7);
       newShot.height = video.clientHeight;
       return snapshots.appendChild(newShotContainer);
     };

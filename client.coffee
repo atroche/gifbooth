@@ -1,7 +1,7 @@
 WIDTH = 640
 HEIGHT = 480
-LENGTH_IN_SECONDS = 2
-FPS = 12
+LENGTH_IN_SECONDS = 1.5
+FPS = 5
 msBetweenShots = ->
   1000 / FPS
 
@@ -47,7 +47,7 @@ onSuccess = (localMediaStream) ->
     newShotContainer.style.display = "none"
     newShotContainer.appendChild newShot
     ctx.drawImage video, 0, 0
-    newShot.src = canvas.toDataURL("image/jpeg", 1.0)
+    newShot.src = canvas.toDataURL("image/jpeg", .7)
     newShot.height = video.clientHeight
     snapshots.appendChild newShotContainer
 
