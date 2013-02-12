@@ -1,21 +1,42 @@
-<style>
-video#camera {
-  height: 540px;
-}
+<html>
+<head>
+  <link href="bootstrap.css" rel="stylesheet">
+  <style>
+    video#camera {
+      width: 100%;
+    }
 
-li#snapshots {
-  list-style: none;
-}
+    ul#snapshots {
+      float: right;
+    }
 
-</style>
+    li#snapshots {
+      list-style: none;
+    }
+
+    #take-snapshot {
+      margin-top: 50px;
+      margin-left: 50px;
+    }
+  </style>
+  <script src="main.js"></script>
+</head>
+<body>
+
+<div class="row">
+  <div class="span6">
+    <video id="camera" autoplay></video>
+  </div>
+  <div class="span6">
+    <ul id="snapshots">
+
+    </ul>
+  </div>
+</div>
 
 
-<video id="camera" autoplay></video>
+<button class="btn btn-primary" id="take-snapshot">It's GIF time</button>
 
-<script src="main.js"></script>
+</body>
 
-<button>Snapshot</button>
-
-<ul id="snapshots">
-
-</ul>
+</html>
