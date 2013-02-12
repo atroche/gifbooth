@@ -20,31 +20,6 @@
 
   snapshots = [];
 
-  socket.on("connect", function() {
-    $('button').removeAttr('disabled');
-    socket.on("imgur", function(data) {
-      $("#gif").attr('src', data.url);
-      $("#gif-url").attr('href', data.url);
-      return $("#gif-url").text(data.url);
-    });
-    return window.sendShots = function() {
-      var img, index, _i, _len, _results;
-      socket.emit('numImages', {
-        numImages: snapshots.length
-      });
-      _results = [];
-      for (index = _i = 0, _len = snapshots.length; _i < _len; index = ++_i) {
-        img = snapshots[index];
-        console.log(img);
-        _results.push(socket.emit('image', {
-          contents: img,
-          imgNum: index
-        }));
-      }
-      return _results;
-    };
-  });
-
   navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
   onSuccess = function(localMediaStream) {
@@ -103,7 +78,31 @@
 
   $(function() {
     var socket;
-    return socket = io.connect(":8080");
+    socket = io.connect(":8080");
+    return socket.on("connect", function() {
+      $('button').removeAttr('disabled');
+      socket.on("imgur", function(data) {
+        $("#gif").attr('src', data.url);
+        $("#gif-url").attr('href', data.url);
+        return $("#gif-url").text(data.url);
+      });
+      return window.sendShots = function() {
+        var img, index, _i, _len, _results;
+        socket.emit('numImages', {
+          numImages: snapshots.length
+        });
+        _results = [];
+        for (index = _i = 0, _len = snapshots.length; _i < _len; index = ++_i) {
+          img = snapshots[index];
+          console.log(img);
+          _results.push(socket.emit('image', {
+            contents: img,
+            imgNum: index
+          }));
+        }
+        return _results;
+      };
+    });
   });
 
 }).call(this);

@@ -10,25 +10,6 @@ numShots = ->
 
 snapshots = []
 
-socket.on "connect", ->
-
-  $('button').removeAttr('disabled')
-
-  socket.on "imgur", (data) ->
-    $("#gif").attr('src', data.url)
-    $("#gif-url").attr('href', data.url)
-    $("#gif-url").text(data.url)
-
-  window.sendShots = ->
-    socket.emit 'numImages', {numImages: snapshots.length}
-
-    for img, index in snapshots
-      console.log img
-      socket.emit 'image', {
-        contents: img,
-        imgNum: index
-      }
-
 
 navigator.getUserMedia = navigator.getUserMedia or navigator.webkitGetUserMedia or navigator.mozGetUserMedia or navigator.msGetUserMedia
 onSuccess = (localMediaStream) ->
@@ -81,3 +62,21 @@ window.onload = ->
 
 $ ->
   socket = io.connect(":8080")
+  socket.on "connect", ->
+
+    $('button').removeAttr('disabled')
+
+    socket.on "imgur", (data) ->
+      $("#gif").attr('src', data.url)
+      $("#gif-url").attr('href', data.url)
+      $("#gif-url").text(data.url)
+
+    window.sendShots = ->
+      socket.emit 'numImages', {numImages: snapshots.length}
+
+      for img, index in snapshots
+        console.log img
+        socket.emit 'image', {
+          contents: img,
+          imgNum: index
+        }
