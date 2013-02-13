@@ -1,5 +1,5 @@
 IMGUR_API_KEY = "652deb70e66249c7046971f0850f144d"
-GIF_BUILD_PATH = "#{GIF_BUILD_PATH}"
+GIF_BUILD_PATH = "~/gifbuild/"
 
 io  = require('socket.io').listen(8080)
 fs  = require('fs')
