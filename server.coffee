@@ -1,4 +1,5 @@
 IMGUR_API_KEY = "652deb70e66249c7046971f0850f144d"
+GIF_BUILD_PATH = "#{GIF_BUILD_PATH}"
 
 io  = require('socket.io').listen(8080)
 fs  = require('fs')
@@ -41,14 +42,14 @@ io.sockets.on 'connection', (socket) ->
   socket.on 'image', (data) ->
     imgData = data.contents.replace(/^data:image\/jpeg;base64,/, "")
     console.log imgData.length
-    filename = "/tmp/#{uploadPrefix}#{data.imgNum}.jpg"
+    filename = "#{GIF_BUILD_PATH}#{uploadPrefix}#{data.imgNum}.jpg"
     fs.writeFile filename, imgData, 'base64', (err) ->
       im.convert [filename, '-resize', '320x240', filename], ->
         imagesReceived += 1
         if imagesReceived >= expectedImages
 
           console.log "It's python time"
-          imArgs = ("/tmp/#{uploadPrefix}#{i}.jpg" for i in [0 ... expectedImages])
+          imArgs = ("#{GIF_BUILD_PATH}#{uploadPrefix}#{i}.jpg" for i in [0 ... expectedImages])
           console.log imArgs
           exec("ls", puts)
           output_file = "gifs/#{uploadPrefix}.gif"
