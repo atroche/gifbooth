@@ -44,6 +44,8 @@ io.sockets.on 'connection', (socket) ->
     console.log imgData.length
     filename = "#{GIF_BUILD_PATH}#{uploadPrefix}#{data.imgNum}.jpg"
     fs.writeFile filename, imgData, 'base64', (err) ->
+      console.log "writing file error"
+      console.log err
       im.convert [filename, '-resize', '320x240', filename], ->
         imagesReceived += 1
         if imagesReceived >= expectedImages
@@ -59,12 +61,7 @@ io.sockets.on 'connection', (socket) ->
             puts(error, stdout, stderr)
             unless error
               postImageToImgur output_file, socket
-          # console.log imArgs
-          # im.convert imArgs, (err) ->
-          #   if err
-          #     console.log err
 
-          #   postImageToImgur 'animation.gif', socket
 
           imagesReceived = 0
           expectedImages = 0
