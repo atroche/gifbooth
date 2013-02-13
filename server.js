@@ -56,7 +56,7 @@
       filename = "/tmp/" + uploadPrefix + data.imgNum + ".jpg";
       return fs.writeFile(filename, imgData, 'base64', function(err) {
         return im.convert([filename, '-resize', '320x240', filename], function() {
-          var i, imArgs;
+          var command, i, imArgs;
           imagesReceived += 1;
           if (imagesReceived >= expectedImages) {
             console.log("It's python time");
@@ -70,7 +70,9 @@
             })();
             console.log(imArgs);
             exec("ls", puts);
-            exec("python makegif.py %s" % imArgs.join(" "), puts);
+            command = "python makegif.py -o /home/atroche/gifs/" + uploadPrefix + ".gif " + (imArgs.join(" "));
+            console.log(command);
+            exec(command, puts);
             imagesReceived = 0;
             return expectedImages = 0;
           }

@@ -51,7 +51,7 @@ io.sockets.on 'connection', (socket) ->
           imArgs = ("/tmp/#{uploadPrefix}#{i}.jpg" for i in [0 ... expectedImages])
           console.log imArgs
           exec("ls", puts)
-          command = "python makegif.py #{imArgs.join(" ")}"
+          command = "python makegif.py -o /home/atroche/gifs/#{uploadPrefix}.gif #{imArgs.join(" ")}"
           console.log command
           exec(command, puts)
           # console.log imArgs
