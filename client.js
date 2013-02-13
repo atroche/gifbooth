@@ -77,7 +77,7 @@
     return gui.add(text, "FPS", 1, 20).onChange(setFPS);
   };
 
-  socket = io.connect("http://linode:8080/");
+  socket = io.connect("http://106.187.45.127:8080/");
 
   socket.on("connect", function() {
     $('button').removeAttr('disabled');

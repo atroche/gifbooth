@@ -62,7 +62,7 @@ window.onload = ->
 
 
 
-socket = io.connect("http://linode:8080/")
+socket = io.connect("http://106.187.45.127:8080/")
 socket.on "connect", ->
 
   $('button').removeAttr('disabled')
