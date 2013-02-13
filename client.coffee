@@ -1,7 +1,7 @@
 WIDTH = 640
 HEIGHT = 480
-LENGTH_IN_SECONDS = 2
-FPS = 15
+LENGTH_IN_SECONDS = 1.5
+FPS = 10
 msBetweenShots = ->
   1000 / FPS
 

@@ -6,9 +6,9 @@
 
   HEIGHT = 480;
 
-  LENGTH_IN_SECONDS = 2;
+  LENGTH_IN_SECONDS = 1.5;
 
-  FPS = 15;
+  FPS = 10;
 
   msBetweenShots = function() {
     return 1000 / FPS;
