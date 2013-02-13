@@ -26,6 +26,8 @@ onSuccess = (localMediaStream) ->
 
   takeShots = ->
     $('#be-patient').show()
+    $('button').attr('disabled', true);
+    $('#loading').show()
     snapshots = []
     i = 0
 
@@ -66,12 +68,16 @@ socket = io.connect("http://106.187.45.127:8080/")
 socket.on "connect", ->
 
   $('button').removeAttr('disabled')
+  $('#loading').hide()
 
   socket.on "imgur", (data) ->
     $("#gif").attr('src', data.url)
     $("#gif-url").attr('href', data.url)
     $("#gif-url").text(data.url)
     $('#be-patient').hide()
+    $('button').removeAttr('disabled')
+    $('#loading').hide()
+
 
   window.sendShots = ->
     socket.emit 'numImages', {numImages: snapshots.length}

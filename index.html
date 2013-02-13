@@ -18,6 +18,14 @@
       margin-top: 50px;
       margin-left: 50px;
     }
+
+    #wrapper {
+      margin-left: 20%;
+    }
+
+    #loading {
+      margin-top: 30px;
+    }
   </style>
 
   <script src="http://106.187.45.127:8080/socket.io/socket.io.js"></script>
@@ -26,6 +34,8 @@
   <script src="client.js"></script>
 </head>
 <body>
+
+<div id="wrapper">
 
 <div class="row">
   <div class="span6">
@@ -39,13 +49,16 @@
   </div>
 </div>
 
-<p>
-  Wait for the button to become clickable!
+<p id="loading">
+  Loading!
+  <img src="ajax-loader.gif" />
 </p>
 <button class="btn btn-primary" disabled id="take-snapshot">It's GIF time</button>
 <p id="be-patient" style="display:none;">
       Be patient! Give it like 20 seconds.
-    </p>
+</p>
+
+</div>
 </body>
 
 </html>
