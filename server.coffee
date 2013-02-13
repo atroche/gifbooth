@@ -46,9 +46,11 @@ io.sockets.on 'connection', (socket) ->
     console.log imgData.length
     filename = "#{GIF_BUILD_PATH}#{uploadPrefix}#{data.imgNum}.jpg"
     fs.writeFile filename, imgData, 'base64', (err) ->
-      console.log "writing file error"
-      console.log err
-      im.convert [filename, '-resize', '320x240', filename], ->
+      if err
+        console.log "writing file error"
+        console.log err
+      im.convert [filename, '-resize', '320x240', filename], (err, stdout, stderr) ->
+        puts (err, stdout, stderr)
         imagesReceived += 1
         if imagesReceived >= expectedImages
 
