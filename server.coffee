@@ -51,9 +51,13 @@ io.sockets.on 'connection', (socket) ->
           imArgs = ("/tmp/#{uploadPrefix}#{i}.jpg" for i in [0 ... expectedImages])
           console.log imArgs
           exec("ls", puts)
-          command = "python makegif.py -o /home/atroche/gifs/#{uploadPrefix}.gif #{imArgs.join(" ")}"
+          output_file = "gifs/#{uploadPrefix}.gif"
+          command = "python makegif.py -o #{output_file} #{imArgs.join(" ")}"
           console.log command
-          exec(command, puts)
+          exec command, (error, stdout, stderr) ->
+            puts(error, stdout, stderr)
+            unless error
+              postImageToImgur output_file, socket
           # console.log imArgs
           # im.convert imArgs, (err) ->
           #   if err
