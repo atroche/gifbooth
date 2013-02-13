@@ -50,7 +50,7 @@ io.sockets.on 'connection', (socket) ->
         console.log "writing file error"
         console.log err
       im.convert [filename, '-resize', '320x240', filename], (err, stdout, stderr) ->
-        puts (err, stdout, stderr)
+        puts(err, stdout, stderr)
         imagesReceived += 1
         if imagesReceived >= expectedImages
 
