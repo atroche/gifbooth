@@ -14,7 +14,8 @@ args = parser.parse_args()
 
 
 images = [Image.open(fname) for fname in args.files]
-# , duration=float(args.duration)
-write_gif(args.output_file, images, repeat=True, subRectangles=False)
+
+write_gif(args.output_file, images, repeat=True, subRectangles=False,
+          duration=float(args.duration))
 
 print "Hey! It all appears to have went well."
