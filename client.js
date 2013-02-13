@@ -79,7 +79,7 @@
     return gui.add(text, "FPS", 1, 20).onChange(setFPS);
   };
 
-  socket = io.connect("http://gifbooth.likelikelikelike.com:8080/");
+  socket = io.connect("http://178.79.170.14:8080/");
 
   socket.on("connect", function() {
     $('button').removeAttr('disabled');

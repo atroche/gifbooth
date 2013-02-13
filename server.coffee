@@ -23,10 +23,12 @@ puts = (error, stdout, stderr) ->
 
 postImageToImgur = (filename, socket) ->
   imgur.upload filename, (response) ->
-    console.log response.error
-    console.log response
-    console.log response.links.original
-    socket.emit 'imgur', {url: response.links.original}
+    if response.error
+      console.log response.error
+    else
+      console.log response
+      console.log response.links.original
+      socket.emit 'imgur', {url: response.links.original}
 
 
 io.sockets.on 'connection', (socket) ->
