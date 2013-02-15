@@ -13,13 +13,20 @@ imgur = require('imgur');
 
 imgur.setKey(IMGUR_API_KEY)
 
+
+gifs = []
+
+
 puts = (error, stdout, stderr) ->
-  sys.puts("error")
-  sys.puts(error)
-  sys.puts("stdout")
-  sys.puts(stdout)
-  sys.puts("stderr")
-  sys.puts(stderr)
+  if error
+    sys.puts("error")
+    sys.puts(error)
+  if stdout
+    sys.puts("stdout")
+    sys.puts(stdout)
+  if stderr
+    sys.puts("stderr")
+    sys.puts(stderr)
 
 postImageToImgur = (filename, socket) ->
   imgur.upload filename, (response) ->
@@ -42,6 +49,10 @@ io.sockets.on 'connection', (socket) ->
 
 
   socket.on 'image', (data) ->
+    # check for gif ID
+    # if it's new, create a GIF
+    # otherwise get the existing GIF to handle it
+
     imgData = data.contents.replace(/^data:image\/jpeg;base64,/, "")
     console.log imgData.length
     filename = "#{GIF_BUILD_PATH}#{uploadPrefix}#{data.imgNum}.jpg"
