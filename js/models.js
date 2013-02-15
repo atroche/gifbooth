@@ -84,7 +84,8 @@
     };
 
     GIF.prototype.createGif = function() {
-      var command, outputFilename, snapFilenames, snapshot;
+      var command, outputFilename, snapFilenames, snapshot,
+        _this = this;
       this.snapshots = _(this.snapshots).sortBy(function(snapshot) {
         return snapshot.numInSequence;
       });
@@ -105,7 +106,7 @@
       }, function(error, stdout, stderr) {
         puts(error, stdout, stderr);
         if (!error) {
-          return this.socket.emit("gifDone", {
+          return _this.socket.emit("gifDone", {
             url: outputFilename
           });
         }

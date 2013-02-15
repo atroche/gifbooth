@@ -76,7 +76,7 @@ class GIF
     outputFilename = "gifs/#{@id}.gif"
     command = "python makegif.py -o #{outputFilename} #{snapFilenames}"
 
-    exec command, (cwd: PROJECT_DIRECTORY), (error, stdout, stderr) ->
+    exec command, (cwd: PROJECT_DIRECTORY), (error, stdout, stderr) =>
       puts(error, stdout, stderr)
       unless error
         @socket.emit "gifDone", url: outputFilename
