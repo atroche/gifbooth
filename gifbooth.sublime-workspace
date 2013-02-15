@@ -1,0 +1,1262 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"snap",
+				"snapshots"
+			],
+			[
+				"key",
+				"key_filename"
+			],
+			[
+				"mark",
+				"markerIndex"
+			],
+			[
+				"cities",
+				"cities_json"
+			],
+			[
+				"indo",
+				"infowindowHTML"
+			],
+			[
+				"sort",
+				"sortedMarkers"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"par",
+				"parsley"
+			],
+			[
+				"url",
+				"urlWithParams"
+			],
+			[
+				"param",
+				"paramPairs"
+			],
+			[
+				"share",
+				"shareOnFacebook"
+			],
+			[
+				"sp",
+				"spreadTheWord"
+			],
+			[
+				"add",
+				"addMarkerForTown"
+			],
+			[
+				"succ",
+				"successTemplate"
+			],
+			[
+				"te",
+				"textareaSelector"
+			],
+			[
+				"un",
+				"uniqueId"
+			],
+			[
+				"model",
+				"model"
+			],
+			[
+				"ac",
+				"account_id"
+			],
+			[
+				"sett",
+				"settingsClicked"
+			],
+			[
+				"service",
+				"service-user"
+			],
+			[
+				"filter",
+				"filterByRating"
+			],
+			[
+				"sha_",
+				"sha_of_new_dump"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/client.coffee",
+			"settings":
+			{
+				"buffer_size": 2287,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/models.coffee",
+			"settings":
+			{
+				"buffer_size": 2204,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/server.coffee",
+			"settings":
+			{
+				"buffer_size": 628,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/settings.coffee",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1086,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"selected_items":
+		[
+			[
+				"lint",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/atroche/dev/gifbooth/src/server.js",
+		"/Users/atroche/dev/gifbooth/src/client.js",
+		"/Users/atroche/dev/gifbooth/js/client.js",
+		"/Users/atroche/dev/gifbooth/js/server.js",
+		"/Users/atroche/dev/gifbooth/js/models.js",
+		"/Users/atroche/dev/gillard/static/css/mezzanine.css",
+		"/Users/atroche/dev/gillard/manage.py",
+		"/Users/atroche/dev/gillard/urls.py",
+		"/Users/atroche/dev/gillard/local_settings.py",
+		"/Users/atroche/dev/gillard/fabfile.py",
+		"/Users/atroche/dev/gillard/deploy/live_settings.py",
+		"/Users/atroche/dev/gillard/requirements/project.txt",
+		"/Users/atroche/dev/nominate/js/templates/map-infowindow.html",
+		"/Users/atroche/dev/nominate/geodata.py",
+		"/Users/atroche/dev/nominate/nominate.sublime-workspace",
+		"/Users/atroche/dev/nominate/css/nominate-your-town.css",
+		"/Users/atroche/dev/nominate/js/data/cities.json.js",
+		"/Users/atroche/dev/nominate/cities1000.txt",
+		"/Users/atroche/dev/nominate/js/views/nomination.js",
+		"/Users/atroche/dev/nominate/js/templates/already-voted.html",
+		"/Users/atroche/dev/nominate/css/application.css",
+		"/Users/atroche/dev/nominate/index.html",
+		"/Users/atroche/dev/nominate/index-dev.html",
+		"/Users/atroche/dev/nominate/js/views/map.js",
+		"/Users/atroche/dev/nominate/kevin/js/views/map.js",
+		"/Users/atroche/dev/nominate/js/main.js",
+		"/Users/atroche/dev/nominate/build.js",
+		"/Users/atroche/dev/nominate/.gitignore",
+		"/Users/atroche/dev/nominate/js/main-built.js",
+		"/Users/atroche/dev/nominate/js/views/townRow.js",
+		"/Users/atroche/dev/nominate/js/views/nominateForm.js",
+		"/Users/atroche/dev/nominate/js/templates/successful-nomination.html",
+		"/Users/atroche/dev/nominate/js/templates/town-row.html",
+		"/Users/atroche/dev/nominate/nominate.sublime-project",
+		"/Users/atroche/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/atroche/dev/nominate/js/.gitignore",
+		"/Users/atroche/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/atroche/dev/nominate/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js/node_modules/sax/examples/shopping.xml",
+		"/Users/atroche/dev/nominate/grunt.js",
+		"/Users/atroche/dev/nominate/README.md",
+		"/Users/atroche/dev/nominate/nominate-your-town-gh-pages/index.html",
+		"/Users/atroche/dev/nominate/index2.html",
+		"/Users/atroche/dev/nominate/js/lib/bootstrap.js",
+		"/Users/atroche/dev/nominate/NominateCloud/cloud/main.js",
+		"/Users/atroche/dev/nominate/js/views/leaderboard.js",
+		"/Users/atroche/dev/nominate/cities.json",
+		"/Users/atroche/dev/nominate/js/views/spreadTheWord.js",
+		"/Users/atroche/dev/nominate/css/main.css",
+		"/Users/atroche/dev/nominate/js/lib/parsley.js",
+		"/Users/atroche/dev/nominate/js/lib/require.js",
+		"/Users/atroche/dev/nominate/js/boilerplate.js",
+		"/Users/atroche/dev/nominate/cities.json.js",
+		"/Users/atroche/dev/nominate/js/collections/towns.js",
+		"/Users/atroche/dev/nominate/js/app.js",
+		"/Users/atroche/Buddy/app/models/messages/session_reminder_message.rb",
+		"/Users/atroche/Buddy/app/models/messages/message.rb",
+		"/Users/atroche/Buddy/spec/models/messages/signup_message_spec.rb",
+		"/Users/atroche/Buddy/app/models/service_user.rb",
+		"/Users/atroche/Buddy/features/step_definitions/clinician_steps.rb",
+		"/Users/atroche/Buddy/app/assets/javascripts/views/session_list/add_service_user.js",
+		"/Users/atroche/Buddy/app/controllers/service_users_controller.rb",
+		"/Users/atroche/Buddy/features/session_list/add_a_service_user.feature",
+		"/Users/atroche/Buddy/features/account_holders/add_a_service_user.feature",
+		"/Users/atroche/Buddy/spec/integration/service_users_controller_spec.rb",
+		"/Users/atroche/Buddy/app/views/password_resets/manual_entry.html.haml",
+		"/Users/atroche/Buddy/app/controllers/password_resets_controller.rb",
+		"/Users/atroche/Buddy/app/models/user.rb",
+		"/Users/atroche/Buddy/spec/integration/sessions_controller_spec.rb",
+		"/Users/atroche/Buddy/app/controllers/user_sessions_controller.rb",
+		"/Users/atroche/Buddy/spec/integration/user_sessions_controller_spec.rb",
+		"/Users/atroche/Buddy/spec/support/login.rb",
+		"/Users/atroche/Buddy/spec/models/user_spec.rb",
+		"/Users/atroche/Buddy/spec/integration/permissions_spec.rb",
+		"/Users/atroche/Buddy/spec/support/matchers/logging_in.rb",
+		"/Users/atroche/Buddy/spec/support/matchers/reply_and_entry.rb",
+		"/Users/atroche/Buddy/app/models/user_session.rb",
+		"/Users/atroche/Buddy/db/schema.rb",
+		"/Users/atroche/Buddy/spec/integration/password_resets_controller_spec.rb",
+		"/Users/atroche/Buddy/spec/factories/users.rb",
+		"/Users/atroche/Buddy/config/routes.rb",
+		"/Users/atroche/Buddy/spec/factories/accounts.rb",
+		"/Users/atroche/Buddy/spec/models/service_user_spec.rb",
+		"/Users/atroche/Buddy/spec/integration/entries_controller_spec.rb",
+		"/Users/atroche/Buddy/features/step_definitions/account_holder_steps.rb",
+		"/Users/atroche/Buddy/app/views/user_mailer/clinician_signup.html.haml",
+		"/Users/atroche/Buddy/app/views/user_mailer/service_user_signup.html.haml",
+		"/Users/atroche/Buddy/app/views/user_mailer/service_user_signup.text.erb",
+		"/Users/atroche/Buddy/app/views/user_mailer/clinician_signup.text.erb",
+		"/Users/atroche/Buddy/app/models/admin.rb",
+		"/Users/atroche/Buddy/app/views/messages/same_day_session_reminder_message.text.erb",
+		"/Users/atroche/Buddy/app/models/session.rb",
+		"/Users/atroche/Buddy/db/migrate/20120826093915_rename_one_hour_session_reminder_message_to_same_day.rb",
+		"/Users/atroche/Buddy/spec/models/stats_accumulator_spec.rb",
+		"/Users/atroche/Buddy/spec/models/session_spec.rb",
+		"/Users/atroche/Buddy/app/assets/javascripts/views/diary/diary_stream.js",
+		"/Users/atroche/Buddy/app/views/messages/twenty_four_hour_session_reminder_message.text.erb",
+		"/Users/atroche/Buddy/app/models/messages/same_day_session_reminder_message.rb",
+		"/Users/atroche/Buddy/spec/models/messages/session_reminder_message_spec.rb",
+		"/Users/atroche/Buddy/coverage/index.html",
+		"/Users/atroche/Buddy/app/views/messages/one_hour_session_reminder_message.text.erb",
+		"/Users/atroche/Buddy/config/database.yml",
+		"/Users/atroche/Buddy/app/controllers/replies_controller.rb",
+		"/Users/atroche/Buddy/app/models/replies/reply.rb",
+		"/Users/atroche/Buddy/app/models/replies/daily_entry_reminder_reply.rb",
+		"/Users/atroche/Buddy/app/views/messages/daily_entry_reminder_message.text.erb",
+		"/Users/atroche/Buddy/spec/models/message_spec.rb",
+		"/Users/atroche/Buddy/lib/tasks/deploy.rake",
+		"/Users/atroche/Buddy/app/assets/javascripts/views/manage_account/add_clinician.js",
+		"/Users/atroche/Buddy/app/assets/javascripts/models/clinician.js",
+		"/Users/atroche/Buddy/app/assets/javascripts/views/manage_account/account_view.js",
+		"/Users/atroche/Buddy/features/admin/add_an_account.feature",
+		"/Users/atroche/Buddy/features/account_holders/adding_a_clinician.feature",
+		"/Users/atroche/Buddy/runtests.sh",
+		"/Users/atroche/Buddy/spec/javascripts/views/diary/diary_stream.spec.js",
+		"/Users/atroche/Buddy/spec/javascripts/views/diary/diary_page.spec.js",
+		"/Users/atroche/Buddy/spec/javascripts/views/diary/diary_entry.spec.js",
+		"/Users/atroche/Buddy/app/assets/javascripts/models/completed_session.js",
+		"/Users/atroche/Buddy/app/assets/javascripts/models/diary_entry.js",
+		"/Users/atroche/Buddy/app/assets/javascripts/models/session.js",
+		"/Users/atroche/Buddy/app/assets/javascripts/views/diary/diary_page.js",
+		"/Users/atroche/Buddy/app/assets/javascripts/collections/diary_stream.js",
+		"/Users/atroche/Buddy/app/assets/javascripts/views/diary/diary_entry.js",
+		"/Users/atroche/Buddy/app/controllers/entries_controller.rb",
+		"/Users/atroche/Buddy/doc/buddy2-migration/migration_plan.txt",
+		"/Users/atroche/Buddy/lib/tasks/sync_db.rake",
+		"/Users/atroche/Buddy/app/assets/javascripts/templates/diary/diary_entry.jst.ejs",
+		"/Users/atroche/Buddy/app/assets/javascripts/models/service_user.js",
+		"/Users/atroche/Buddy/app/views/service_users/show.html.haml"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			"",
+			"js/*",
+			"",
+			"*.js",
+			"*.rb",
+			"*.js",
+			"",
+			"SameDaySessionReminderMessage",
+			"",
+			"*.js",
+			"*.rake",
+			"",
+			"*.js",
+			"*.feature",
+			"",
+			"models/",
+			"",
+			"*.rb",
+			"",
+			"licence",
+			"",
+			"*.rb",
+			"",
+			"*.rb",
+			"",
+			"*.rb",
+			"",
+			"*.rb",
+			"*.js",
+			"*.rb",
+			"",
+			"*.ejs",
+			"",
+			"*.rb",
+			"*.erb",
+			"",
+			"*.rb",
+			"*.erb",
+			"*.js",
+			"*.rb",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"numImages",
+			"sendShots",
+			"msBetweenShots",
+			"zepto",
+			"msBetweenShots",
+			"numShots",
+			"socket.on",
+			"sys",
+			"numInSequence",
+			"@numInSequence",
+			"@gif",
+			"uploadPrefix",
+			"GIF_BUILD",
+			"INSTALLED",
+			"ADMIN_MEDIA",
+			"grappel",
+			"grapelli",
+			"grapeli",
+			"INSTALLED_AP",
+			"data",
+			"STATICFILES",
+			"execute_from",
+			"execute_form",
+			"virtualenv",
+			"reqs_path",
+			"requirements_path",
+			"port",
+			"ssh",
+			"Lat",
+			"data/cities",
+			"cities",
+			".json",
+			".json.js",
+			"that",
+			"geocode",
+			"english_speaking_countries",
+			"true",
+			"city['country']",
+			"pos",
+			"info",
+			"hide-on-phones",
+			"type=\"submit",
+			"Nominate",
+			"subscribe",
+			"you must pick",
+			"like",
+			"Thanks!",
+			"opacit",
+			"setm",
+			"add",
+			"gh-pages",
+			"require",
+			"define",
+			"_.template",
+			"Handlebars",
+			"handlebars",
+			"Handlebars",
+			"template",
+			"alreadyVoted",
+			"template",
+			"_.template",
+			"if",
+			"\\{\\{ ([^\\{\\}]+) \\}\\}",
+			"\\{\\{ [^\\{\\}]+ \\}\\}",
+			"\\{\\{ .* \\}\\}",
+			"{{ .* }}",
+			"\\{\\{ .* \\}\\}",
+			"{{ .* }}",
+			"{{",
+			"Handlebars.compile",
+			"Handlebar",
+			"FB",
+			"fb",
+			"FB",
+			"fb_connect",
+			"Marker",
+			"FB.",
+			"marker",
+			"ss-social",
+			"typeahead",
+			"ribbon-blue",
+			"ambiance",
+			"boot",
+			"glyph",
+			"collection",
+			"towns",
+			"country\": \"GB",
+			"Nominate",
+			"tabindex",
+			"Parse.User",
+			"spread",
+			"thanks for voting",
+			"already-vot",
+			"Thanks!",
+			"successful-nom",
+			"successful",
+			"like",
+			"handle",
+			"map",
+			"maps",
+			"Fb.",
+			"fb",
+			"spread",
+			"facebook",
+			"map",
+			"maps",
+			"bootstrap",
+			"form-container",
+			"compile",
+			"script",
+			"require",
+			"window.scroll",
+			"scroll",
+			"hero.jpg",
+			"text!",
+			"parsley",
+			"blink",
+			".hide",
+			"dublin",
+			"manageValidationResult",
+			"Cloud",
+			"parse.com",
+			"allowedTown",
+			"multiple",
+			"form",
+			"parsl",
+			"validate",
+			"createUser"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"numShots",
+			"<%= $1 %>",
+			"<%= $! %>",
+			"_.template",
+			"",
+			"getDataFromForm",
+			"has_one_correct_same_day_reminder",
+			"has a future same day reminder",
+			"SameDaySessionReminderMessage",
+			"with 3 users",
+			"licences_remaining",
+			":data => {confirm: \"$1\"}"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/client.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2287,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								609,
+								609
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 410.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/models.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2204,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1812,
+								1812
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 638.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "src/server.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 628,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								304,
+								304
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/settings.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1086,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								692,
+								692
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 263.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"project": "/Users/atroche/dev/gifbooth/gifbooth.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"inde",
+				"index.html"
+			],
+			[
+				"models.js",
+				"js/models.js"
+			],
+			[
+				"models",
+				"src/models.coffee"
+			],
+			[
+				"local",
+				"local_settings.py"
+			],
+			[
+				"urls",
+				"urls.py"
+			],
+			[
+				"grunt",
+				"grunt.js"
+			],
+			[
+				"cities",
+				"js/data/cities.json.js"
+			],
+			[
+				"geo",
+				"geodata.py"
+			],
+			[
+				"ciit",
+				"js/data/cities.json.js"
+			],
+			[
+				"map",
+				"js/views/map.js"
+			],
+			[
+				"appl",
+				"css/application.css"
+			],
+			[
+				"appli",
+				"css/application.css"
+			],
+			[
+				"alread",
+				"js/templates/already-voted.html"
+			],
+			[
+				"form.",
+				"js/views/nominateForm.js"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"build",
+				"build.js"
+			],
+			[
+				"main",
+				"js/main.js"
+			],
+			[
+				"index-",
+				"index-dev.html"
+			],
+			[
+				"readme",
+				"README.md"
+			],
+			[
+				"index-dev",
+				"index-dev.html"
+			],
+			[
+				"boot",
+				"js/lib/bootstrap.js"
+			],
+			[
+				"build.js",
+				"build.js"
+			],
+			[
+				"nominate",
+				"js/views/nominateForm.js"
+			],
+			[
+				"nomin",
+				"js/views/nomination.js"
+			],
+			[
+				"nom",
+				"js/views/nominateForm.js"
+			],
+			[
+				"leaderboar",
+				"js/views/leaderboard.js"
+			],
+			[
+				"bootstrap",
+				"js/lib/bootstrap.js"
+			],
+			[
+				"spread",
+				"js/views/spreadTheWord.js"
+			],
+			[
+				"main.css",
+				"css/main.css"
+			],
+			[
+				"main-",
+				"js/main-built.js"
+			],
+			[
+				"main-buil",
+				"js/main-built.js"
+			],
+			[
+				"leader",
+				"js/views/leaderboard.js"
+			],
+			[
+				"citie",
+				"js/data/cities.json.js"
+			],
+			[
+				"par",
+				"js/lib/parsley.js"
+			],
+			[
+				"man.",
+				"css/main.css"
+			],
+			[
+				"pars",
+				"js/lib/parsley.js"
+			],
+			[
+				"cities.json",
+				"js/data/cities.json.js"
+			],
+			[
+				"require",
+				"js/lib/require.js"
+			],
+			[
+				"mainjs",
+				"js/main.js"
+			],
+			[
+				"mian",
+				"css/main.css"
+			],
+			[
+				"views",
+				"js/views/townRow.js"
+			],
+			[
+				"boil",
+				"js/boilerplate.js"
+			],
+			[
+				"boiler",
+				"js/boilerplate.js"
+			],
+			[
+				"citi",
+				"cities.json"
+			],
+			[
+				"cities.",
+				"cities.json"
+			],
+			[
+				"towns",
+				"js/collections/towns.js"
+			],
+			[
+				"town",
+				"js/views/townRow.js"
+			],
+			[
+				"css",
+				"css/main.css"
+			],
+			[
+				"townro",
+				"js/views/townRow.js"
+			],
+			[
+				"message.rb",
+				"app/models/messages/message.rb"
+			],
+			[
+				"signup_message",
+				"app/models/messages/sign_up_message.rb"
+			],
+			[
+				"sign",
+				"spec/models/messages/signup_message_spec.rb"
+			],
+			[
+				"add_service",
+				"app/assets/javascripts/views/session_list/add_service_user.js"
+			],
+			[
+				"service_users",
+				"app/controllers/service_users_controller.rb"
+			],
+			[
+				"addaservice",
+				"features/session_list/add_a_service_user.feature"
+			],
+			[
+				"featuresadd",
+				"features/account_holders/add_a_service_user.feature"
+			],
+			[
+				"user_session",
+				"app/controllers/user_sessions_controller.rb"
+			],
+			[
+				"user.rb",
+				"app/models/user.rb"
+			],
+			[
+				"schema",
+				"db/schema.rb"
+			],
+			[
+				"manual_",
+				"app/views/password_resets/manual_entry.html.haml"
+			],
+			[
+				"passwor",
+				"app/controllers/password_resets_controller.rb"
+			],
+			[
+				"routes",
+				"config/routes.rb"
+			],
+			[
+				"factoriesu",
+				"spec/factories/users.rb"
+			],
+			[
+				"factories",
+				"spec/factories/accounts.rb"
+			],
+			[
+				"service_user_spec",
+				"spec/models/service_user_spec.rb"
+			],
+			[
+				"session_spec",
+				"spec/models/session_spec.rb"
+			],
+			[
+				"stats_",
+				"spec/models/stats_accumulator_spec.rb"
+			],
+			[
+				"rename",
+				"db/migrate/20120826093915_rename_one_hour_session_reminder_message_to_same_day.rb"
+			],
+			[
+				"one_hourerb",
+				"app/views/messages/one_hour_session_reminder_message.text.erb"
+			],
+			[
+				"session_reminder_message",
+				"app/views/messages/twenty_four_hour_session_reminder_message.text.erb"
+			],
+			[
+				"session_remindererb",
+				"app/views/messages/one_hour_session_reminder_message.text.erb"
+			],
+			[
+				"session_reminder",
+				"app/models/messages/session_reminder_message.rb"
+			],
+			[
+				"sessionrb",
+				"app/models/session.rb"
+			],
+			[
+				"message_spec",
+				"spec/models/message_spec.rb"
+			],
+			[
+				"daily_entrerb",
+				"app/views/messages/daily_entry_reminder_message.text.erb"
+			],
+			[
+				"database",
+				"config/database.yml"
+			],
+			[
+				"daily_ent",
+				"app/models/replies/daily_entry_reminder_reply.rb"
+			],
+			[
+				"reply.r",
+				"app/models/replies/reply.rb"
+			],
+			[
+				"replies_",
+				"app/controllers/replies_controller.rb"
+			],
+			[
+				"session.rb",
+				"app/models/session.rb"
+			],
+			[
+				"deplo",
+				"lib/tasks/deploy.rake"
+			],
+			[
+				"message",
+				"app/models/messages/message.rb"
+			],
+			[
+				"add_anacc",
+				"features/admin/add_an_account.feature"
+			],
+			[
+				"clini",
+				"app/assets/javascripts/models/clinician.js"
+			],
+			[
+				"add_clin",
+				"app/assets/javascripts/views/manage_account/add_clinician.js"
+			],
+			[
+				"addin",
+				"features/account_holders/adding_a_clinician.feature"
+			],
+			[
+				"runtest",
+				"runtests.sh"
+			],
+			[
+				"sync",
+				"lib/tasks/sync_db.rake"
+			],
+			[
+				"entries_con",
+				"app/controllers/entries_controller.rb"
+			],
+			[
+				"deploy",
+				"lib/tasks/deploy.rake"
+			],
+			[
+				"diary_stream",
+				"app/assets/javascripts/views/diary/diary_stream.js"
+			],
+			[
+				"diarypage.js",
+				"app/assets/javascripts/views/diary/diary_page.js"
+			],
+			[
+				"modelssessionjs",
+				"app/assets/javascripts/models/session.js"
+			],
+			[
+				"diary_entry",
+				"app/assets/javascripts/models/diary_entry.js"
+			],
+			[
+				"complete_session",
+				"app/assets/javascripts/models/completed_session.js"
+			],
+			[
+				"completed_sess",
+				"app/assets/javascripts/models/completed_session.js"
+			],
+			[
+				"runte",
+				"runtests.sh"
+			],
+			[
+				"diary_streamspec",
+				"spec/javascripts/views/diary/diary_stream.spec.js"
+			],
+			[
+				"clinician.js",
+				"app/assets/javascripts/models/clinician.js"
+			],
+			[
+				"diary_sream",
+				"app/assets/javascripts/views/diary/diary_stream.js"
+			],
+			[
+				"diarypage",
+				"app/assets/javascripts/views/diary/diary_page.js"
+			],
+			[
+				"diary_pagespec",
+				"spec/javascripts/views/diary/diary_page.spec.js"
+			],
+			[
+				"diary_entrejs",
+				"app/assets/javascripts/templates/diary/diary_entry.jst.ejs"
+			],
+			[
+				"service_user.js",
+				"app/assets/javascripts/models/service_user.js"
+			],
+			[
+				"clinici",
+				"app/assets/javascripts/models/clinician.js"
+			],
+			[
+				"diary_strea",
+				"app/assets/javascripts/views/diary/diary_stream.js"
+			],
+			[
+				"diary_entrjs",
+				"app/assets/javascripts/views/diary/diary_entry.js"
+			],
+			[
+				"diary_entryspec",
+				"spec/javascripts/views/diary/diary_entry.spec.js"
+			],
+			[
+				"viewdiaryentry",
+				"app/assets/javascripts/views/diary/diary_entry.js"
+			],
+			[
+				"diary_entry.js",
+				"app/assets/javascripts/models/diary_entry.js"
+			],
+			[
+				"serviceusershow",
+				"app/views/service_users/show.html.haml"
+			],
+			[
+				"entr_spec",
+				"spec/models/entry_spec.rb"
+			],
+			[
+				"entry.rb",
+				"app/models/entry.rb"
+			],
+			[
+				"runt",
+				"runtests.sh"
+			],
+			[
+				"entries_cont",
+				"spec/integration/entries_controller_spec.rb"
+			],
+			[
+				"entry_teps",
+				"features/step_definitions/entry_steps.rb"
+			],
+			[
+				"session.js",
+				"app/assets/javascripts/models/session.js"
+			],
+			[
+				"sessionjs",
+				"app/assets/javascripts/models/session.js"
+			],
+			[
+				"entry.js",
+				"app/assets/javascripts/models/diary_entry.js"
+			],
+			[
+				"entrystep",
+				"features/step_definitions/entry_steps.rb"
+			],
+			[
+				"serviceuserview",
+				"features/service_users/service_user_view.feature"
+			],
+			[
+				"diaryentryejs",
+				"app/assets/javascripts/templates/diary/diary_entry.jst.ejs"
+			],
+			[
+				"diary_entryejs",
+				"app/assets/javascripts/templates/diary/diary_entry.jst.ejs"
+			],
+			[
+				"featuressupport",
+				"features/support/env.rb"
+			],
+			[
+				"spec_helper",
+				"spec/spec_helper.rb"
+			],
+			[
+				"service_user_steps",
+				"features/step_definitions/service_user_steps.rb"
+			],
+			[
+				"vagrantfile",
+				"Vagrantfile"
+			],
+			[
+				"gemfile",
+				"Gemfile"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 231.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

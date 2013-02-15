@@ -1,6 +1,6 @@
 <html>
 <head>
-  <link href="bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
   <style>
     video#camera {
       width: 100%;
@@ -28,10 +28,10 @@
     }
   </style>
 
-  <script src="http://178.79.170.14:8080/socket.io/socket.io.js"></script>
-  <script src="dat.gui.js"></script>
-  <script src="zepto.js"></script>
-  <script src="client.js"></script>
+  <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+  <script src="js/dat.gui.js"></script>
+  <script src="js/zepto.js"></script>
+  <script src="js/client.js"></script>
 </head>
 <body>
 
@@ -51,9 +51,9 @@
 
 <p id="loading">
   Loading!
-  <img src="ajax-loader.gif" />
+  <img src="img/ajax-loader.gif" />
 </p>
-<button class="btn btn-primary" disabled id="take-snapshot">It's GIF time</button>
+<button class="btn btn-primary" disabled id="take-snapshots">It's GIF time</button>
 <p id="be-patient" style="display:none;">
       Be patient! Give it like 20 seconds.
 </p>

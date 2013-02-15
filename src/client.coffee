@@ -2,89 +2,111 @@ WIDTH = 640
 HEIGHT = 480
 LENGTH_IN_SECONDS = 1.5
 FPS = 10
+
 msBetweenShots = ->
   1000 / FPS
 
 numShots = ->
   LENGTH_IN_SECONDS * FPS
 
-snapshots = []
+
+$ ->
+
+  # for cross-browser support
+  navigator.getUserMedia = navigator.getUserMedia \
+                           or navigator.webkitGetUserMedia \
+                           or navigator.mozGetUserMedia \
+                           or navigator.msGetUserMedia
 
 
-navigator.getUserMedia = navigator.getUserMedia or navigator.webkitGetUserMedia or navigator.mozGetUserMedia or navigator.msGetUserMedia
-onSuccess = (localMediaStream) ->
-  video = $("video#camera")[0]
-  video.src = window.URL.createObjectURL(localMediaStream)
   canvas = document.createElement("canvas")
   canvas.width = WIDTH
   canvas.height = HEIGHT
   ctx = canvas.getContext("2d")
 
-  takeShot = ->
-    ctx.drawImage video, 0, 0
-    snapshots.push canvas.toDataURL("image/jpeg", .7)
+  video = $("video#camera")[0]
 
-  takeShots = ->
+
+  turnLoadingMessages = (state) ->
+    if state == "on"
+      $('#take-snapshots').attr('disabled', true);
+      $('#loading').show()
+    else
+      $('#take-snapshots').removeAttr('disabled')
+      $('#loading').hide()
+
+
+  socket = io.connect("http://localhost:8080/")
+  socket.on "connect", ->
+    turnLoadingMessages('off')
+
+    socket.on "gifDone", (data) ->
+      $("#gif").attr('src', data.url)
+      $("#gif-url").attr('href', data.url)
+      $("#gif-url").text(data.url)
+      $('#be-patient').hide()
+      $('#take-snapshots').removeAttr('disabled')
+      $('#loading').hide()
+
+
+
+
+  takeShots = (gifId) ->
+
+    turnLoadingMessages('on')
     $('#be-patient').show()
-    $('button').attr('disabled', true);
-    $('#loading').show()
-    snapshots = []
-    i = 0
 
-    while i < numShots()
-      setTimeout takeShot, i * msBetweenShots()
-      i++
+    console.log "taking shots for GIF #{gifId}"
 
-    # Show the new snaps
-    setTimeout sendShots, numShots() * msBetweenShots() + 1000
+    takeShot = (numInSequence) ->
+      return ->
+        console.log "taking shot #{numInSequence}"
+        ctx.drawImage video, 0, 0
 
-  $("button").on "click", takeShots
+        socket.emit "newSnapshot",
+          gifId: gifId,
+          numInSequence: numInSequence
+          imgContents: canvas.toDataURL("image/jpeg", .7)
 
-onError = (error) ->
-  console.log "error: " + error.code
+    for i in [0 ... numShots()]
+      setTimeout(takeShot(i), i * msBetweenShots())
 
-navigator.getUserMedia
-  video: true
-, onSuccess, onError
-FizzyText = ->
-  @lengthInSeconds = LENGTH_IN_SECONDS
-  @FPS = FPS
-
-setLengthInSeconds = (lengthInSeconds) ->
-  LENGTH_IN_SECONDS = lengthInSeconds
-
-setFPS = (fps) ->
-  FPS = fps
-
-window.onload = ->
-  text = new FizzyText()
-  gui = new dat.GUI()
-  gui.add(text, "lengthInSeconds", .5, 4).step(.5).onChange setLengthInSeconds
-  gui.add(text, "FPS", 1, 20).onChange setFPS
+  socket.on "newGifReady", (data) ->
+    console.log "new Gif Ready!"
+    takeShots(data.gifId)
 
 
-
-socket = io.connect("http://178.79.170.14:8080/")
-socket.on "connect", ->
-
-  $('button').removeAttr('disabled')
-  $('#loading').hide()
-
-  socket.on "imgur", (data) ->
-    $("#gif").attr('src', data.url)
-    $("#gif-url").attr('href', data.url)
-    $("#gif-url").text(data.url)
-    $('#be-patient').hide()
-    $('button').removeAttr('disabled')
-    $('#loading').hide()
+  snapshotButtonClicked = ->
+    socket.emit 'newGif', numShots: numShots()
 
 
-  window.sendShots = ->
-    socket.emit 'numImages', {numImages: snapshots.length}
+  initSettingsSliders = ->
 
-    for img, index in snapshots
-      console.log img
-      socket.emit 'image', {
-        contents: img,
-        imgNum: index
-      }
+    FizzyText = ->
+      @lengthInSeconds = LENGTH_IN_SECONDS
+      @FPS = FPS
+
+    set = (settingName) ->
+      setterFunc = (newVal) ->
+        window[settingName] = newVal
+
+    text = new FizzyText()
+    gui = new dat.GUI()
+    gui.add(text, "lengthInSeconds", .5, 4, .5).onChange set("LENGTH_IN_SECONDS")
+    gui.add(text, "FPS", 1, 20).onChange set("FPS")
+
+
+
+
+  onAllow = (localMediaStream) ->
+    video.src = window.URL.createObjectURL(localMediaStream)
+
+  onDeny = (error) ->
+    console.log "error: " + error.code
+
+
+  initSettingsSliders()
+
+  navigator.getUserMedia video: true, onAllow, onDeny
+
+  $("#take-snapshots").on "click", snapshotButtonClicked
