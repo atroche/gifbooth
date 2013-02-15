@@ -35,7 +35,7 @@
         return $('#loading').hide();
       }
     };
-    socket = io.connect("http://localhost:8080/");
+    socket = io.connect("http://178.79.170.14:8080/");
     socket.on("connect", function() {
       turnLoadingMessages('off');
       return socket.on("gifDone", function(data) {
