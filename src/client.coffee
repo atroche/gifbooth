@@ -43,7 +43,7 @@ $ ->
     socket.on "gifDone", (data) ->
       $("#gif").attr('src', data.url)
       $("#gif-url").attr('href', data.url)
-      $("#gif-url").text(data.url)
+      $("#gif-url").text("Direct URL")
       $('#be-patient').hide()
       $('#take-snapshots').removeAttr('disabled')
       $('#loading').hide()
