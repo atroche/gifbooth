@@ -43,24 +43,14 @@
       imgContents = imgContents.replace(/^data:image\/jpeg;base64,/, "");
       filename = "" + GIF_BUILD_PATH + gif.id + this.numInSequence + ".jpg";
       fs.writeFile(filename, imgContents, 'base64', function(err) {
-        var conversionArgs;
         if (err) {
           console.log("writing file error");
           console.log(err);
           return;
         }
-        conversionArgs = [filename, '-resize', '320x240', filename];
-        return im.convert(conversionArgs, function(err, stdout, stderr) {
-          if (err) {
-            console.log("error converting");
-            console.log(err);
-            return;
-          }
-          console.log("file converted!");
-          _this.readyForGiffing = true;
-          console.log("I'm snapshot " + _this.numInSequence + " and I'm ready: " + _this.readyForGiffing);
-          return gif.checkIfReady();
-        });
+        _this.readyForGiffing = true;
+        console.log("I'm snapshot " + _this.numInSequence + " and I'm ready: " + _this.readyForGiffing);
+        return gif.checkIfReady();
       });
     }
 

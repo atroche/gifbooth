@@ -39,18 +39,9 @@ class Snapshot
         console.log err
         return
 
-      conversionArgs = [filename, '-resize', '320x240', filename]
-      im.convert conversionArgs, (err, stdout, stderr) =>
-        if err
-          console.log "error converting"
-          console.log err
-          return
-
-        console.log "file converted!"
-
-        @readyForGiffing = true
-        console.log "I'm snapshot #{@numInSequence} and I'm ready: #{@readyForGiffing}"
-        gif.checkIfReady()
+      @readyForGiffing = true
+      console.log "I'm snapshot #{@numInSequence} and I'm ready: #{@readyForGiffing}"
+      gif.checkIfReady()
 
 
 class GIF

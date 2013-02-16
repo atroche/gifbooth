@@ -2,9 +2,9 @@
 (function() {
   var HEIGHT, WIDTH, msBetweenShots;
 
-  WIDTH = 640;
+  WIDTH = 320;
 
-  HEIGHT = 480;
+  HEIGHT = 240;
 
   window.LENGTH_IN_SECONDS = 1.5;
 
@@ -35,12 +35,12 @@
         return $('#loading').hide();
       }
     };
-    socket = io.connect("http://178.79.170.14:8080/");
+    socket = io.connect("http://gifbooth.likelikelikelike.com:8080/");
     socket.on("connect", function() {
       turnLoadingMessages('off');
       return socket.on("gifDone", function(data) {
         var url;
-        url = "http://178.79.170.14/" + data.url;
+        url = "http://gifbooth.likelikelikelike.com/" + data.url;
         $("#gif").attr('src', url);
         $("#gif-url").attr('href', url);
         $("#gif-url").text("Direct URL");
@@ -57,7 +57,7 @@
       takeShot = function(numInSequence) {
         return function() {
           console.log("taking shot " + numInSequence);
-          ctx.drawImage(video, 0, 0);
+          ctx.drawImage(video, 0, 0, 320, 240);
           return socket.emit("newSnapshot", {
             gifId: gifId,
             numInSequence: numInSequence,

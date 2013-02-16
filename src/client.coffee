@@ -1,5 +1,5 @@
-WIDTH = 640
-HEIGHT = 480
+WIDTH = 320
+HEIGHT = 240
 window.LENGTH_IN_SECONDS = 1.5
 window.FPS = 5
 
@@ -36,12 +36,12 @@ $ ->
       $('#loading').hide()
 
 
-  socket = io.connect("http://178.79.170.14:8080/")
+  socket = io.connect("http://gifbooth.likelikelikelike.com:8080/")
   socket.on "connect", ->
     turnLoadingMessages('off')
 
     socket.on "gifDone", (data) ->
-      url = "http://178.79.170.14/" + data.url;
+      url = "http://gifbooth.likelikelikelike.com/" + data.url;
       $("#gif").attr('src', url)
       $("#gif-url").attr('href', url)
       $("#gif-url").text("Direct URL")
@@ -62,7 +62,7 @@ $ ->
     takeShot = (numInSequence) ->
       return ->
         console.log "taking shot #{numInSequence}"
-        ctx.drawImage video, 0, 0
+        ctx.drawImage video, 0, 0, 320, 240
 
         socket.emit "newSnapshot",
           gifId: gifId,
