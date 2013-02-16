@@ -20,11 +20,20 @@
     }
 
     #wrapper {
+      margin-top: 5%;
       margin-left: 20%;
     }
 
     #loading {
       margin-top: 30px;
+    }
+
+    #countdown {
+      font-size: 62pt;
+      position: absolute;
+      display: block;
+      left: 10px;
+      top: 100px;
     }
   </style>
 
@@ -37,11 +46,17 @@
 
 <div id="wrapper">
 
+    <div id="countdown">
+    </div>
+
 <div class="row">
+  <div class="span1">
+
+  </div>
   <div class="span6">
     <video id="camera" autoplay></video>
   </div>
-  <div class="span6">
+  <div class="span5">
     <img id="gif" />
     <p>
       <a id="gif-url" href=""></a>
@@ -49,16 +64,21 @@
   </div>
 </div>
 
-<p id="loading">
-  Loading!
-  <img src="img/ajax-loader.gif" />
-</p>
-<button class="btn btn-primary" disabled id="take-snapshots">It's GIF time</button>
-<p id="be-patient" style="display:none;">
-      Be patient! Give it like 10 seconds.
-</p>
+<div class="row">
+  <div class="offset1">
+    <p id="loading">
+      Loading!
+      <img src="img/ajax-loader.gif" />
+    </p>
+    <button class="btn btn-primary" disabled id="take-snapshots">It's GIF time</button>
+    <p id="be-patient" style="display:none;">
+          Be patient! Give it like 10 seconds.
+    </p>
+  </div>
+</div>
 
 </div>
+
 </body>
 
 </html>

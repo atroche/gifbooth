@@ -1,7 +1,7 @@
 WIDTH = 320
 HEIGHT = 240
 window.LENGTH_IN_SECONDS = 1.5
-window.FPS = 8
+window.FPS = 10
 
 msBetweenShots = ->
   1000 / FPS
@@ -49,6 +49,7 @@ $ ->
         $('#be-patient').hide()
         $('#take-snapshots').removeAttr('disabled')
         $('#loading').hide()
+        $('#countdown').text('')
 
 
 
@@ -73,9 +74,24 @@ $ ->
     for i in [0 ... numShots()]
       setTimeout(takeShot(i), i * msBetweenShots())
 
+    resetCountdown = ->
+      $('#countdown').text('Stop')
+
+    setTimeout(resetCountdown, numShots() * msBetweenShots() + 100)
+
   socket.on "newGifReady", (data) ->
     console.log "new Gif Ready!"
-    takeShots(data.gifId)
+
+    countdown = (seconds) ->
+      if seconds == 0
+        takeShots(data.gifId)
+        $('#countdown').text("Go!")
+      else
+        $('#countdown').text(seconds)
+        setNextCountDown = -> countdown(seconds - 1)
+        setTimeout(setNextCountDown, 1000)
+
+    countdown(3)
 
 
   snapshotButtonClicked = ->

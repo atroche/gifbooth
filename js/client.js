@@ -8,7 +8,7 @@
 
   window.LENGTH_IN_SECONDS = 1.5;
 
-  window.FPS = 8;
+  window.FPS = 10;
 
   msBetweenShots = function() {
     return 1000 / FPS;
@@ -47,12 +47,13 @@
           $("#gif-url").text("Direct URL");
           $('#be-patient').hide();
           $('#take-snapshots').removeAttr('disabled');
-          return $('#loading').hide();
+          $('#loading').hide();
+          return $('#countdown').text('');
         });
       });
     });
     takeShots = function(gifId) {
-      var i, takeShot, _i, _ref, _results;
+      var i, resetCountdown, takeShot, _i, _ref;
       turnLoadingMessages('on');
       $('#be-patient').show();
       console.log("taking shots for GIF " + gifId);
@@ -67,15 +68,31 @@
           });
         };
       };
-      _results = [];
       for (i = _i = 0, _ref = numShots(); 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
-        _results.push(setTimeout(takeShot(i), i * msBetweenShots()));
+        setTimeout(takeShot(i), i * msBetweenShots());
       }
-      return _results;
+      resetCountdown = function() {
+        return $('#countdown').text('Stop');
+      };
+      return setTimeout(resetCountdown, numShots() * msBetweenShots() + 100);
     };
     socket.on("newGifReady", function(data) {
+      var countdown;
       console.log("new Gif Ready!");
-      return takeShots(data.gifId);
+      countdown = function(seconds) {
+        var setNextCountDown;
+        if (seconds === 0) {
+          takeShots(data.gifId);
+          return $('#countdown').text("Go!");
+        } else {
+          $('#countdown').text(seconds);
+          setNextCountDown = function() {
+            return countdown(seconds - 1);
+          };
+          return setTimeout(setNextCountDown, 1000);
+        }
+      };
+      return countdown(3);
     });
     snapshotButtonClicked = function() {
       return socket.emit('newGif', {
