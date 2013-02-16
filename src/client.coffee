@@ -1,7 +1,7 @@
 WIDTH = 320
 HEIGHT = 240
 window.LENGTH_IN_SECONDS = 1.5
-window.FPS = 5
+window.FPS = 8
 
 msBetweenShots = ->
   1000 / FPS
@@ -43,11 +43,12 @@ $ ->
     socket.on "gifDone", (data) ->
       url = "http://gifbooth.likelikelikelike.com/" + data.url;
       $("#gif").attr('src', url)
-      $("#gif-url").attr('href', url)
-      $("#gif-url").text("Direct URL")
-      $('#be-patient').hide()
-      $('#take-snapshots').removeAttr('disabled')
-      $('#loading').hide()
+      $("#gif").on 'load', ->
+        $("#gif-url").attr('href', url)
+        $("#gif-url").text("Direct URL")
+        $('#be-patient').hide()
+        $('#take-snapshots').removeAttr('disabled')
+        $('#loading').hide()
 
 
 

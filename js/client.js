@@ -8,7 +8,7 @@
 
   window.LENGTH_IN_SECONDS = 1.5;
 
-  window.FPS = 5;
+  window.FPS = 8;
 
   msBetweenShots = function() {
     return 1000 / FPS;
@@ -42,11 +42,13 @@
         var url;
         url = "http://gifbooth.likelikelikelike.com/" + data.url;
         $("#gif").attr('src', url);
-        $("#gif-url").attr('href', url);
-        $("#gif-url").text("Direct URL");
-        $('#be-patient').hide();
-        $('#take-snapshots').removeAttr('disabled');
-        return $('#loading').hide();
+        return $("#gif").on('load', function() {
+          $("#gif-url").attr('href', url);
+          $("#gif-url").text("Direct URL");
+          $('#be-patient').hide();
+          $('#take-snapshots').removeAttr('disabled');
+          return $('#loading').hide();
+        });
       });
     });
     takeShots = function(gifId) {
