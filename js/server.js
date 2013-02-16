@@ -23,7 +23,7 @@
   io.sockets.on('connection', function(socket) {
     socket.on('newGif', function(data) {
       var gif;
-      gif = new models.GIF(data.numShots, socket);
+      gif = new models.GIF(data.numShots, socket, data.FPS);
       gifs.push(gif);
       return socket.emit('newGifReady', {
         gifId: gif.id

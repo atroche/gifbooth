@@ -1,13 +1,13 @@
 WIDTH = 640
 HEIGHT = 480
-LENGTH_IN_SECONDS = 1.5
-FPS = 10
+window.LENGTH_IN_SECONDS = 1.5
+window.FPS = 5
 
 msBetweenShots = ->
   1000 / FPS
 
-numShots = ->
-  LENGTH_IN_SECONDS * FPS
+window.numShots = ->
+  Math.floor(LENGTH_IN_SECONDS * FPS)
 
 
 $ ->
@@ -41,8 +41,9 @@ $ ->
     turnLoadingMessages('off')
 
     socket.on "gifDone", (data) ->
-      $("#gif").attr('src', data.url)
-      $("#gif-url").attr('href', data.url)
+      url = "http://178.79.170.14/" + data.url;
+      $("#gif").attr('src', url)
+      $("#gif-url").attr('href', url)
       $("#gif-url").text("Direct URL")
       $('#be-patient').hide()
       $('#take-snapshots').removeAttr('disabled')
@@ -77,7 +78,7 @@ $ ->
 
 
   snapshotButtonClicked = ->
-    socket.emit 'newGif', numShots: numShots()
+    socket.emit 'newGif', (numShots: numShots(), FPS: FPS)
 
 
   initSettingsSliders = ->
@@ -93,7 +94,7 @@ $ ->
     text = new FizzyText()
     gui = new dat.GUI()
     gui.add(text, "lengthInSeconds", .5, 4, .5).onChange set("LENGTH_IN_SECONDS")
-    gui.add(text, "FPS", 1, 20).onChange set("FPS")
+    gui.add(text, "FPS", 1, 20, 1).onChange set("FPS")
 
 
 

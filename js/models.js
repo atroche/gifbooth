@@ -70,9 +70,10 @@
 
   GIF = (function() {
 
-    function GIF(expectedNumberOfImages, socket) {
+    function GIF(expectedNumberOfImages, socket, FPS) {
       this.expectedNumberOfImages = expectedNumberOfImages;
       this.socket = socket;
+      this.FPS = FPS;
       this.id = uuid.v4();
       this.snapshots = [];
     }
@@ -100,7 +101,7 @@
         return _results;
       }).call(this)).join(" ");
       outputFilename = "gifs/" + this.id + ".gif";
-      command = "python makegif.py -o " + outputFilename + " " + snapFilenames;
+      command = "python makegif.py -d " + (1 / this.FPS) + " -o " + outputFilename + " " + snapFilenames;
       return exec(command, {
         cwd: PROJECT_DIRECTORY
       }, function(error, stdout, stderr) {

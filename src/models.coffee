@@ -55,7 +55,7 @@ class Snapshot
 
 class GIF
   # Handles the creation of a GIF file from many Snapshots
-  constructor: (@expectedNumberOfImages, @socket) ->
+  constructor: (@expectedNumberOfImages, @socket, @FPS) ->
     @id = uuid.v4()
     @snapshots = []
 
@@ -74,7 +74,7 @@ class GIF
                      for snapshot in @snapshots).join(" ")
 
     outputFilename = "gifs/#{@id}.gif"
-    command = "python makegif.py -o #{outputFilename} #{snapFilenames}"
+    command = "python makegif.py -d #{1/@FPS} -o #{outputFilename} #{snapFilenames}"
 
     exec command, (cwd: PROJECT_DIRECTORY), (error, stdout, stderr) =>
       puts(error, stdout, stderr)

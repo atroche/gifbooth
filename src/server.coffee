@@ -16,7 +16,7 @@ gifs = []
 io.sockets.on 'connection', (socket) ->
 
   socket.on 'newGif', (data) ->
-    gif = new models.GIF(data.numShots, socket)
+    gif = new models.GIF(data.numShots, socket, data.FPS)
     gifs.push(gif)
     socket.emit 'newGifReady', gifId: gif.id
 
