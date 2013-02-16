@@ -93,8 +93,8 @@ $ ->
 
     text = new FizzyText()
     gui = new dat.GUI()
-    gui.add(text, "lengthInSeconds", .5, 4, .5).onChange set("LENGTH_IN_SECONDS")
-    gui.add(text, "FPS", 1, 20, 1).onChange set("FPS")
+    gui.add(text, "lengthInSeconds", .5, 4).step(.5).onChange set("LENGTH_IN_SECONDS")
+    gui.add(text, "FPS", 1, 20).step(1).onChange set("FPS")
 
 
 
