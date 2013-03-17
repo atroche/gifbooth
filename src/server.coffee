@@ -1,4 +1,12 @@
-io  = require('socket.io').listen(8080)
+express = require('express')
+app = express()
+
+http = require('http')
+server = http.createServer(app)
+
+server.listen(8080)
+
+io  = require('socket.io').listen(server)
 fs  = require('fs')
 im = require('imagemagick')
 uuid = require('node-uuid')
@@ -7,6 +15,17 @@ exec = require('child_process').exec
 _ = require('underscore')
 models = require('./models')
 
+
+
+most_recent_gifs = ->
+  _.sortBy fs.readdirSync('gifs/'), (filename) ->
+    fs.statSync('gifs/' + filename).mtime
+
+
+
+app.get '/recent', (req, res) ->
+  most_recent = _.chain(most_recent_gifs()).reverse().first(5).value()
+  res.json most_recent
 
 
 gifs = []
