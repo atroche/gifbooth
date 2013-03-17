@@ -1,5 +1,5 @@
 allowCrossDomain = (req, res, next) ->
-    res.header('Access-Control-Allow-Origin', ['localhost', '192.168.1.15', 'gifbooth.likelikelikelike.com'])
+    res.header('Access-Control-Allow-Origin', ['http://localhost', 'http://192.168.1.15', 'http://gifbooth.likelikelikelike.com'])
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
     res.header('Access-Control-Allow-Headers', 'Content-Type')
 
