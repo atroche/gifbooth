@@ -1,0 +1,39 @@
+.gifs {
+position:absolute;
+left:-130px;
+width:900px;
+top: 140px;
+height:1000px;
+margin-top:-380px;
+overflow:hidden;
+}
+
+body {
+	overflow:hidden;
+}
+
+.gifs .inside {
+position:absolute;
+top:0;
+left:50%;
+width:150px;
+margin-left:-75px;
+}
+
+.gifs a {
+display:block;
+position:absolute;
+width:336px;
+height:251px;
+overflow:hidden;
+-moz-border-radius:314px;
+-webkit-border-radius:314px;
+border-radius:314px;
+border:3px solid #bbb;
+}
+
+
+/* gifs always have ratio: w/h=1.33
+base size: w:320, h:240;
+	due to js this css won't do anything, reference only
+ */
