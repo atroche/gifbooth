@@ -6,6 +6,8 @@
 
   app = express();
 
+  app.use(express.bodyParser());
+
   http = require('http');
 
   server = http.createServer(app);
@@ -38,6 +40,13 @@
     var most_recent;
     most_recent = _.chain(most_recent_gifs()).reverse().first(5).value();
     return res.json(most_recent);
+  });
+
+  app.post('/email', function(req, res) {
+    return fs.open('emails', 'a', function(err, fd) {
+      fs.write(fd, "" + req.body.email + " " + req.body.id + "\n");
+      return res.json(req.body);
+    });
   });
 
   gifs = [];

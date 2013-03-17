@@ -1,5 +1,6 @@
 express = require('express')
 app = express()
+app.use(express.bodyParser())
 
 http = require('http')
 server = http.createServer(app)
@@ -22,10 +23,15 @@ most_recent_gifs = ->
     fs.statSync('gifs/' + filename).mtime
 
 
-
 app.get '/recent', (req, res) ->
   most_recent = _.chain(most_recent_gifs()).reverse().first(5).value()
   res.json most_recent
+
+
+app.post '/email', (req, res) ->
+  fs.open 'emails', 'a', (err, fd) ->
+    fs.write(fd, "#{req.body.email} #{req.body.id}\n")
+    res.json req.body
 
 
 gifs = []
