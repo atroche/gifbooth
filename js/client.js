@@ -2,9 +2,9 @@
 (function() {
   var HEIGHT, WIDTH, msBetweenShots;
 
-  WIDTH = 320;
+  WIDTH = 640;
 
-  HEIGHT = 240;
+  HEIGHT = 480;
 
   window.LENGTH_IN_SECONDS = 1.5;
 
@@ -60,7 +60,7 @@
       takeShot = function(numInSequence) {
         return function() {
           console.log("taking shot " + numInSequence);
-          ctx.drawImage(video, 0, 0, 320, 240);
+          ctx.drawImage(video, 0, 0, WIDTH, HEIGHT);
           return socket.emit("newSnapshot", {
             gifId: gifId,
             numInSequence: numInSequence,

@@ -1,5 +1,5 @@
-WIDTH = 320
-HEIGHT = 240
+WIDTH = 640
+HEIGHT = 480
 window.LENGTH_IN_SECONDS = 1.5
 window.FPS = 10
 
@@ -63,7 +63,7 @@ $ ->
     takeShot = (numInSequence) ->
       return ->
         console.log "taking shot #{numInSequence}"
-        ctx.drawImage video, 0, 0, 320, 240
+        ctx.drawImage video, 0, 0, WIDTH, HEIGHT
 
         socket.emit "newSnapshot",
           gifId: gifId,
