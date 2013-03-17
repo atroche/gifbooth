@@ -1,6 +1,7 @@
 express = require('express')
 app = express()
 app.use(express.bodyParser())
+app.use(express.static(__dirname + '/../'))
 
 http = require('http')
 server = http.createServer(app)
@@ -55,4 +56,3 @@ io.sockets.on 'connection', (socket) ->
       gif.addSnapshot(snapData)
     else
       socket.emit 'error'
-

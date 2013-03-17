@@ -9,7 +9,6 @@ msBetweenShots = ->
 window.numShots = ->
   Math.floor(LENGTH_IN_SECONDS * FPS)
 
-
 $ ->
 
   # for cross-browser support
@@ -36,12 +35,12 @@ $ ->
       $('#loading').hide()
 
 
-  socket = io.connect("http://gifbooth.likelikelikelike.com:8080/")
+  socket = io.connect("/")
   socket.on "connect", ->
     turnLoadingMessages('off')
 
     socket.on "gifDone", (data) ->
-      url = "http://gifbooth.likelikelikelike.com/" + data.url;
+      url = "/" + data.url;
       $("#gif").attr('src', url)
       $("#gif").on 'load', ->
         $("#gif-url").attr('href', url)

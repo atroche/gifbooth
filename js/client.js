@@ -35,12 +35,12 @@
         return $('#loading').hide();
       }
     };
-    socket = io.connect("http://gifbooth.likelikelikelike.com:8080/");
+    socket = io.connect("/");
     socket.on("connect", function() {
       turnLoadingMessages('off');
       return socket.on("gifDone", function(data) {
         var url;
-        url = "http://gifbooth.likelikelikelike.com/" + data.url;
+        url = "/" + data.url;
         $("#gif").attr('src', url);
         return $("#gif").on('load', function() {
           $("#gif-url").attr('href', url);

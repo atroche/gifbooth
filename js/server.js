@@ -8,6 +8,8 @@
 
   app.use(express.bodyParser());
 
+  app.use(express["static"](__dirname + '/../'));
+
   http = require('http');
 
   server = http.createServer(app);
