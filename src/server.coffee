@@ -10,7 +10,7 @@ server.listen(8080)
 
 io  = require('socket.io').listen(server)
 fs  = require('fs')
-im = require('imagemagick')
+
 uuid = require('node-uuid')
 sys = require('sys')
 exec = require('child_process').exec
