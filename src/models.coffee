@@ -1,7 +1,6 @@
 exec = require('child_process').exec
 sys = require('sys')
 fs = require('fs')
-im = require('imagemagick')
 uuid = require('node-uuid')
 _ = require('underscore')
 
