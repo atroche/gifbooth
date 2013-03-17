@@ -68,7 +68,7 @@ $ ->
         socket.emit "newSnapshot",
           gifId: gifId,
           numInSequence: numInSequence
-          imgContents: canvas.toDataURL("image/jpeg", .7)
+          imgContents: canvas.toDataURL("image/jpeg", 1)
 
     for i in [0 ... numShots()]
       setTimeout(takeShot(i), i * msBetweenShots())

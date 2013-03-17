@@ -64,7 +64,7 @@
           return socket.emit("newSnapshot", {
             gifId: gifId,
             numInSequence: numInSequence,
-            imgContents: canvas.toDataURL("image/jpeg", .7)
+            imgContents: canvas.toDataURL("image/jpeg", 1)
           });
         };
       };
