@@ -1,5 +1,5 @@
-WIDTH = 640
-HEIGHT = 480
+WIDTH = 320
+HEIGHT = 240
 window.LENGTH_IN_SECONDS = 1.5
 window.FPS = 10
 
@@ -68,7 +68,7 @@ $ ->
         socket.emit "newSnapshot",
           gifId: gifId,
           numInSequence: numInSequence
-          imgContents: canvas.toDataURL("image/jpeg", 1)
+          imgContents: canvas.toDataURL("image/jpeg", .8)
 
     for i in [0 ... numShots()]
       setTimeout(takeShot(i), i * msBetweenShots())
