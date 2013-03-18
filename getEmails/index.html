@@ -41,15 +41,19 @@
             <div id="getEmailBox">
           <div>
             <h3>
-              Send this&nbsp;to me
+              Send this to me
             </h3>
           </div>
           <div class="form-horizontal">
-          <input name="gifEmailText1" type="" placeholder="Your email address" class="gifEmailText">
+          <input name="gifEmailTextBox" type="" placeholder="Your email address" class="gifEmailText">
           <a class="btn btn-primary sendGifButton" href="#">
             Send
           </a>
         </div>
+          <div id="emailStatusWrap">
+            <p id="emailStatus">
+            </p>
+          </div>
         </div>
 
 
@@ -58,6 +62,21 @@
 
 
     <style>
+
+    #emailStatusWrap {
+      margin-top:30px;
+    }
+
+    .emailColour {
+      font-weight:bold;
+    }
+
+    #emailStatus {
+      font-size:20px;
+      color:white;
+      text-align:left;
+      line-height: 26px;
+    }
 
       #getEmailBox {
         color:white;
@@ -79,7 +98,7 @@
       }
       
       .sendGifButton {
-         padding: 6px 16px;
+         padding: 8px 18px;
          margin-left: 10px;
       }
 

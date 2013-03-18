@@ -14,7 +14,7 @@
 
   GIF_BUILD_PATH = "" + process.env.HOME + "/gifbuild/";
 
-  PROJECT_DIRECTORY = "" + process.env.HOME + "/dev/gifbooth/";
+  PROJECT_DIRECTORY = "" + process.env.HOME + "/Documents/workspace/gifbooth/";
 
   puts = function(error, stdout, stderr) {
     if (error) {

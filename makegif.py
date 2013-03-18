@@ -1,4 +1,8 @@
 from images2gif import writeGif as write_gif
+
+import sys
+sys.path.append("/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/")
+
 from PIL import Image
 import argparse
 

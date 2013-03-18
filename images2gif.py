@@ -65,7 +65,9 @@ Usefull links
 """
 # todo: This module should be part of imageio (or at least based on)
 
-import os, time
+import os, time, sys
+
+sys.path.append("/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/")
 
 try:
     import PIL
