@@ -65,7 +65,7 @@ function emailGif() {
 	  async: true,
 	  success:  function(data){
 	  	// Update statusbar
-		updateStatus('Your gif has been emailed to <br /><span class="emailColour">'+email+'</span>');
+		updateStatus('Your gif will be emailed to <br /><span class="emailColour">'+email+'</span>');
 		$('.gifEmailText').val('');
 	  }});
 }
