@@ -3,15 +3,11 @@
 $(function(){
 	syncGifs();
 
-
-	$('.sendGifButton').click(function(){
+	$("#send-email").submit(function(){
 		emailGif();
+		return false;
 	});
-	$('#input_text').keyup(function(e) {
-		if(e.keyCode == 13) {
-			emailGif();
-		}
-	});
+
 });
 
 function isRFC822ValidEmail(sEmail) {
