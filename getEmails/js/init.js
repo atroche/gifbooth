@@ -65,7 +65,7 @@ function emailGif() {
 	  dataType: "json",
 	  data: postData,
 	  type: 'POST',
-	  url: 'http://localhost:8080/email',
+	  url: '/email',
 	  async: true,
 	  success:  function(data){
 	  	// Update statusbar
@@ -117,7 +117,7 @@ function syncGifs() {
 
 	  $.ajax({
 	  dataType: "json",
-	  url: 'http://localhost:8080/recent',
+	  url: '/recent',
 	  async: false,
 	  success:  function(data){
 			if (compareList(currGifs,data)) {  	
