@@ -37,11 +37,22 @@
 
 <div id="scrollerWrapper"></div>
 
+        <div id="upDown">
+          <button id="upBtn" class="btn btn-primary updownButton" href="#">
+            <img src="images/up.png" />
+          </button>
+        </button>
+          <br />
+          <br />
+          <button id="downBtn" class="btn btn-primary updownButton" href="#">
+            <img src="images/down.png" />
+          </button>
+        </div>
 
             <div id="getEmailBox">
           <div>
             <h3>
-              Send this to me
+              Send it to me
             </h3>
           </div>
 
@@ -83,8 +94,27 @@
       #getEmailBox {
         color:white;
         position:absolute;
-        top: 180px;
-        left: 770px;
+        top: 218px;
+        left: 875px;
+      }
+
+      #upDown {
+        position:absolute;
+        top:220px;
+        left: 725px;
+      }
+
+      .updownButton {
+         border-radius: 100px;
+      }
+
+      .updownButton, .updownButton img {
+        opacity: 0.7;
+      }
+
+      .updownButton img {
+         height: 40px;
+         width: 40px;
       }
 
       .gifEmailText, .sendGifButton, h3 {

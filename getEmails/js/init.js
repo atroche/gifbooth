@@ -8,6 +8,16 @@ $(function(){
 		return false;
 	});
 
+	$("#upBtn").click(function(){
+		$('.active').prev().click();
+	});
+
+	$("#downBtn").click(function(){
+		$('.active').next().click();
+	});
+
+
+
 });
 
 function isRFC822ValidEmail(sEmail) {
